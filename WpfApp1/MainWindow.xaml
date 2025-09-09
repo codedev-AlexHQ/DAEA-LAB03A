@@ -7,6 +7,28 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+            <Button Content="Conexión Conectada" Width="150" Height="50" x:Name="ConexionConectada" Click="ConexionConectada_Click"/>
+            <Button Content="Conexión Desconectada" Width="150" Height="50" x:Name="ConexionDesconectada" Click="ConexionDesconectada_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
+            <TextBox x:Name="txtBuscar" Width="200" Margin="0,0,10,0"/>
+            <Button Content="Buscar" Click="Button_Click" Padding="10,5"/>
+        </StackPanel>
+
+        <!-- DataGrid -->
+        <DataGrid x:Name="dgEstudiantes" Grid.Row="2" Margin="10" 
+                  AutoGenerateColumns="True" IsReadOnly="True"/>
+
+        <!-- Status -->
+        <TextBlock x:Name="txtStatus" Grid.Row="3" Margin="10" 
+                   Text="Listo para conectar..." HorizontalAlignment="Center"/>
 
     </Grid>
 </Window>
